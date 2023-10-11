@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4h23ftp1f1t1"]
+
+[ext_resource type="PackedScene" uid="uid://cqt34n7hkqlp5" path="res://assets/tunnel_prototype01/tunnel_prototype_corner.glb" id="1_aqcnn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yxjfw"]
+size = Vector3(76.92, 0, 76.92)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xcgni"]
+size = Vector3(0, 30, 76.92)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ws8dr"]
+size = Vector3(77.9935, 30, 0)
+
+[node name="tunnel_prototype_corner" instance=ExtResource("1_aqcnn")]
+
+[node name="floor" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" index="0"]
+shape = SubResource("BoxShape3D_yxjfw")
+
+[node name="wall1" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.1055, 15.2845, 0)
+shape = SubResource("BoxShape3D_xcgni")
+
+[node name="wall3" type="StaticBody3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0120239, -0.166965, -0.0819931)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115278, 15.2845, 38.5159)
+shape = SubResource("BoxShape3D_ws8dr")

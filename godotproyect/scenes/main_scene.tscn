@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://chnjbe7qj3tem"]
+
+[ext_resource type="PackedScene" uid="uid://qfowquhrobkd" path="res://scenes/player.tscn" id="2_bw4bu"]
+[ext_resource type="PackedScene" uid="uid://ceb0gj18s5u8r" path="res://scenes/tunnel_prototype_closed.tscn" id="2_gqjfu"]
+[ext_resource type="PackedScene" uid="uid://c4h23ftp1f1t1" path="res://scenes/tunnel_prototype_corner.tscn" id="3_c8fk5"]
+[ext_resource type="PackedScene" uid="uid://booaldt45qcba" path="res://scenes/tunnel_prototype_door.tscn" id="4_8ba81"]
+[ext_resource type="PackedScene" uid="uid://l04nsfuvm1yy" path="res://scenes/tunnel_prototype_sideroom_1.tscn" id="5_ky4gu"]
+
+[sub_resource type="Environment" id="Environment_i0lgi"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.156863, 0.172549, 0.258824, 1)
+ambient_light_energy = 0.25
+
+[sub_resource type="BoxMesh" id="BoxMesh_sxpis"]
+
+[node name="main_scene" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("2_bw4bu")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.825092, 0.418918, -0.379119, -0.123672, 0.788645, 0.602283, 0.551297, -0.450052, 0.702513, 0, 54.9824, 0)
+light_color = Color(0.513726, 0.541176, 0.72549, 1)
+light_energy = 1.305
+shadow_enabled = true
+directional_shadow_max_distance = 300.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i0lgi")
+
+[node name="map" type="Node" parent="."]
+
+[node name="tunnel_prototype_closed" parent="map" instance=ExtResource("2_gqjfu")]
+
+[node name="tunnel_prototype_corner" parent="map" instance=ExtResource("3_c8fk5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.43413, 0, -76.035)
+
+[node name="tunnel_prototype_door" parent="map" instance=ExtResource("4_8ba81")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -74.9458, 0, -76.05)
+
+[node name="tunnel_prototype_closed2" parent="map" instance=ExtResource("2_gqjfu")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -151.234, -0.413544, -76.2422)
+
+[node name="tunnel_prototype_sideroom1" parent="map" instance=ExtResource("5_ky4gu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -92, 0, -153.091)
+
+[node name="roofpatch" type="MeshInstance3D" parent="map"]
+transform = Transform3D(8.0798, 0.000283866, -8.00291, 4.22064e-07, -0.00035507, -14.1973, 7.3181, -0.000313412, 8.83589, -35.9908, 35.8405, -39.0215)
+mesh = SubResource("BoxMesh_sxpis")
+skeleton = NodePath("../..")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmmdtssei366o"]
+
+[ext_resource type="PackedScene" uid="uid://cx0qoqjkwsvvb" path="res://assets/tunnel_prototype01/tunnel_prototype_1.glb" id="1_jntaw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x8avf"]
+size = Vector3(80, 0, 80)
+
+[node name="tunnel_prototype_1" instance=ExtResource("1_jntaw")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_x8avf")

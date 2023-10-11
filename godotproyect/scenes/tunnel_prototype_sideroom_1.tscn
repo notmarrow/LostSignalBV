@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://l04nsfuvm1yy"]
+
+[ext_resource type="PackedScene" uid="uid://dusai2biqykd" path="res://assets/tunnel_prototype01/tunnel_prototype_sideroom1.glb" id="1_f472f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_81e1v"]
+size = Vector3(80, 0, 76.8443)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4q8f0"]
+size = Vector3(77, 25, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a6pp0"]
+size = Vector3(0, 25, 77)
+
+[node name="tunnel_prototype_sideroom1" instance=ExtResource("1_f472f")]
+
+[node name="WallRight" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4977, 12.9141, 0)
+
+[node name="Ceiling" parent="." index="2"]
+transform = Transform3D(1.01621, 0, 0, 0, 1, 0, 0, 0, 1, -0.0186821, 25.5516, 0.0959702)
+
+[node name="WallLeft_001" parent="." index="4"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.18018, 12.7829, 38.1232)
+
+[node name="floor" type="StaticBody3D" parent="." index="5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" index="0"]
+shape = SubResource("BoxShape3D_81e1v")
+
+[node name="ceiling" type="StaticBody3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.6926, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ceiling" index="0"]
+shape = SubResource("BoxShape3D_81e1v")
+
+[node name="wall1" type="StaticBody3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 37.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall1" index="0"]
+shape = SubResource("BoxShape3D_4q8f0")
+
+[node name="wall2" type="StaticBody3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.3597, 13, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall2" index="0"]
+shape = SubResource("BoxShape3D_a6pp0")
+
+[node name="wall3" type="StaticBody3D" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.1474, 13, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall3" index="0"]
+shape = SubResource("BoxShape3D_a6pp0")
