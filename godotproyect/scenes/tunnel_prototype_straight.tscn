@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://ff5kgp4onc6o"]
+
+[ext_resource type="PackedScene" uid="uid://b2wt2lh7v7kpa" path="res://assets/tunnel_prototype01/tunnel_prototype_straight.glb" id="1_p6350"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ixjs"]
+size = Vector3(80, 0, 76.92)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k24r1"]
+size = Vector3(0, 30, 76.92)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8dpj4"]
+size = Vector3(2, 25, 2)
+
+[node name="tunnel_prototype_straight" instance=ExtResource("1_p6350")]
+
+[node name="floor" type="StaticBody3D" parent="." index="12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" index="0"]
+shape = SubResource("BoxShape3D_3ixjs")
+
+[node name="wall1" type="StaticBody3D" parent="." index="13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.1055, 15.2845, 0)
+shape = SubResource("BoxShape3D_k24r1")
+
+[node name="wall2" type="StaticBody3D" parent="." index="14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.9189, 15.2845, 0)
+shape = SubResource("BoxShape3D_k24r1")
+
+[node name="Pillar1" type="StaticBody3D" parent="." index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3932, 13.1671, -7.07713)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar1" index="0"]
+shape = SubResource("BoxShape3D_8dpj4")
+
+[node name="Pillar2" type="StaticBody3D" parent="." index="16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.393, 13.167, -22.995)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar2" index="0"]
+shape = SubResource("BoxShape3D_8dpj4")
+
+[node name="Pillar3" type="StaticBody3D" parent="." index="17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3932, 13.1671, 9.16132)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar3" index="0"]
+shape = SubResource("BoxShape3D_8dpj4")
+
+[node name="Pillar4" type="StaticBody3D" parent="." index="18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3932, 13.1671, 24.3133)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar4" index="0"]
+shape = SubResource("BoxShape3D_8dpj4")
+
+[node name="Pillar5" type="StaticBody3D" parent="." index="19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3673, 13.1491, -7.30011)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar5" index="0"]
+shape = SubResource("BoxShape3D_8dpj4")
+
+[node name="Pillar6" type="StaticBody3D" parent="." index="20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3675, 13.149, -23.218)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar6" index="0"]
+shape = SubResource("BoxShape3D_8dpj4")
+
+[node name="Pillar7" type="StaticBody3D" parent="." index="21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3673, 13.1491, 8.93833)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar7" index="0"]
+shape = SubResource("BoxShape3D_8dpj4")
+
+[node name="Pillar8" type="StaticBody3D" parent="." index="22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3673, 13.1491, 24.0903)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar8" index="0"]
+shape = SubResource("BoxShape3D_8dpj4")

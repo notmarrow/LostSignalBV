@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4y0aeog3srqo"]
+
+[ext_resource type="PackedScene" uid="uid://c3t3ge1u8asva" path="res://assets/cars/car_blue.glb" id="1_ijxpu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iauoq"]
+size = Vector3(10, 5.5, 6)
+
+[node name="car_blue" instance=ExtResource("1_ijxpu")]
+
+[node name="CarCollider" type="StaticBody3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.732169, 3.05592, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarCollider" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.697826, 0, 0)
+shape = SubResource("BoxShape3D_iauoq")
